@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from "./context/AuthContext";
 import { CompanyProvider } from "./context/CompanyContext";
 import useInvoiceStore from "./hooks/useInvoiceStore";
 import useExpenseStore from "./hooks/useExpenseStore";
+import useTemplateStore from "./hooks/useTemplateStore";
 import Layout from "./layout/Layout";
 
 // Lazy load page components
@@ -20,6 +21,7 @@ const CompanySettings = lazy(() => import("./pages/CompanySettings"));
 const ExpenseList = lazy(() => import("./pages/ExpenseList"));
 const NewExpense = lazy(() => import("./pages/NewExpense"));
 const EditExpense = lazy(() => import("./pages/EditExpense"));
+const Templates = lazy(() => import("./pages/Templates"));
 
 // Protected route wrapper
 const ProtectedRoute = ({ children }) => {
@@ -64,6 +66,7 @@ function AppRoutes() {
   const { isAuthenticated } = useAuth();
   const { initializeStore: initializeInvoiceStore } = useInvoiceStore();
   const { initializeStore: initializeExpenseStore } = useExpenseStore();
+  const { initializeTemplates } = useTemplateStore();
   const [error, setError] = useState(null);
 
   // Initialize stores
@@ -71,11 +74,12 @@ function AppRoutes() {
     try {
       initializeInvoiceStore();
       initializeExpenseStore();
+      initializeTemplates();
     } catch (err) {
       console.error("Failed to initialize stores:", err);
       setError(err);
     }
-  }, [initializeInvoiceStore, initializeExpenseStore]);
+  }, [initializeInvoiceStore, initializeExpenseStore, initializeTemplates]);
 
   if (error) {
     return <ErrorFallback error={error} />;
@@ -102,6 +106,7 @@ function AppRoutes() {
           <Route path="expenses" element={<ExpenseList />} />
           <Route path="expenses/new" element={<NewExpense />} />
           <Route path="expenses/:id/edit" element={<EditExpense />} />
+          <Route path="templates" element={<Templates />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

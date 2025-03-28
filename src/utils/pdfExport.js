@@ -1,87 +1,95 @@
-import { jsPDF } from 'jspdf';
+import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 /**
- * Exports an invoice as a PDF file
- * @param {React.RefObject} invoiceRef - React ref to the invoice DOM element
- * @param {string} fileName - Name of the file to be downloaded
- * @returns {Promise<void>}
+ * Generate a formatted filename for the exported PDF
+ * @param {Object} invoice - The invoice data
+ * @returns {string} - The formatted filename
  */
-export const exportToPdf = async (invoiceRef, fileName = 'invoice.pdf') => {
-    if (!invoiceRef.current) {
-        throw new Error('No invoice element found to export');
-    }
+export const generatePdfFilename = (invoice) => {
+    const invoiceNumber = invoice.invoiceNumber || 'unknown';
+    const customerName = invoice.customer?.name || 'customer';
+    const cleanCustomerName = customerName.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+    const date = new Date().toISOString().split('T')[0];
 
-    try {
-        // Temporarily add a class to handle printing styles
-        invoiceRef.current.classList.add('pdf-export');
-
-        // Create a new jsPDF instance (A4 format by default)
-        const pdf = new jsPDF({
-            orientation: 'portrait',
-            unit: 'mm',
-            format: 'a4',
-        });
-
-        // Calculate the optimal scaling factor
-        const pageWidth = pdf.internal.pageSize.getWidth();
-        const pageHeight = pdf.internal.pageSize.getHeight();
-
-        // Render the invoice to canvas
-        const canvas = await html2canvas(invoiceRef.current, {
-            scale: 2, // Higher scale for better quality
-            useCORS: true, // To handle images from different origins
-            logging: false,
-            allowTaint: true,
-        });
-
-        // Calculate the optimal scaling
-        const imgWidth = pageWidth - 20; // 10mm margins on each side
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-        // Handle multi-page content if the invoice is too long
-        let position = 10; // Starting position from top
-        const imgData = canvas.toDataURL('image/png');
-
-        // Add the first page
-        pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
-
-        // Add more pages if needed
-        let heightLeft = imgHeight;
-        while (heightLeft >= pageHeight - 20) { // 10mm margins top and bottom
-            position = heightLeft - pageHeight + 20;
-            heightLeft -= pageHeight - 20;
-            pdf.addPage();
-            pdf.addImage(imgData, 'PNG', 10, -position, imgWidth, imgHeight);
-        }
-
-        // Save the PDF
-        pdf.save(fileName);
-
-        // Remove the temporary class
-        invoiceRef.current.classList.remove('pdf-export');
-
-        return true;
-    } catch (error) {
-        console.error('Error exporting to PDF:', error);
-        throw error;
-    }
+    return `invoice-${invoiceNumber}-${cleanCustomerName}-${date}.pdf`;
 };
 
 /**
- * Generates a filename for the invoice PDF
- * @param {Object} invoice - The invoice object
- * @returns {string} Formatted filename
+ * Export the invoice element to PDF
+ * @param {HTMLElement} element - The element to export
+ * @param {Object} invoice - The invoice data
+ * @returns {Promise<Blob>} - The generated PDF as a Blob
  */
-export const generatePdfFilename = (invoice) => {
-    if (!invoice) return 'invoice.pdf';
+export const exportToPdf = async (element, invoice) => {
+    if (!element) {
+        throw new Error('No element provided for PDF export');
+    }
 
-    const invoiceNumber = invoice.number || '';
-    const clientName = invoice.client?.name
-        ? invoice.client.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '_')
-        : 'client';
+    try {
+        // Add PDF export class to the element for styling
+        element.classList.add('pdf-export');
 
-    const date = new Date().toISOString().split('T')[0];
+        // Create canvas from the HTML element
+        const canvas = await html2canvas(element, {
+            scale: 2, // Higher scale for better quality
+            useCORS: true, // Enable CORS for loading images
+            logging: false,
+            backgroundColor: '#ffffff',
+        });
 
-    return `Invoice_${invoiceNumber}_${clientName}_${date}.pdf`;
+        // Remove PDF export class
+        element.classList.remove('pdf-export');
+
+        // Get dimensions
+        const imgWidth = 210; // A4 width in mm
+        const pageHeight = 297; // A4 height in mm
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        // Create PDF in A4 format
+        const pdf = new jsPDF('p', 'mm', 'a4');
+
+        let position = 0;
+        let heightLeft = imgHeight;
+
+        // Add image to PDF (first page)
+        pdf.addImage(
+            canvas.toDataURL('image/png'),
+            'PNG',
+            0,
+            position,
+            imgWidth,
+            imgHeight,
+            undefined,
+            'FAST'
+        );
+        heightLeft -= pageHeight;
+
+        // Add new pages if content exceeds A4 height
+        while (heightLeft > 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(
+                canvas.toDataURL('image/png'),
+                'PNG',
+                0,
+                position,
+                imgWidth,
+                imgHeight,
+                undefined,
+                'FAST'
+            );
+            heightLeft -= pageHeight;
+        }
+
+        // Generate filename and save PDF
+        const filename = generatePdfFilename(invoice);
+        pdf.save(filename);
+
+        // Return blob for potential further processing
+        return pdf.output('blob');
+    } catch (error) {
+        console.error('Error generating PDF:', error);
+        throw error;
+    }
 }; 

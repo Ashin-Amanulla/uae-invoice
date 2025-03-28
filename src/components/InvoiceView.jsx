@@ -1,6 +1,15 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
+import useTemplateStore from "../hooks/useTemplateStore";
 
 const InvoiceView = forwardRef(({ invoice }, ref) => {
+  const { getActiveTemplate, initializeTemplates } = useTemplateStore();
+  const [template, setTemplate] = useState(null);
+
+  useEffect(() => {
+    initializeTemplates();
+    setTemplate(getActiveTemplate());
+  }, [initializeTemplates, getActiveTemplate]);
+
   if (!invoice) {
     return <div>No invoice data available.</div>;
   }
@@ -22,16 +31,39 @@ const InvoiceView = forwardRef(({ invoice }, ref) => {
     }).format(amount);
   };
 
+  // Get template settings or use defaults
+  const settings = template?.settings || {
+    primaryColor: "#4F46E5",
+    fontFamily: "Inter, sans-serif",
+    showLogo: true,
+    showPaymentDetails: true,
+    showSignature: false,
+    footerText: "Thank you for your business!",
+  };
+
+  // Apply template styling
+  const accentColor = settings.primaryColor;
+  const fontFamily = settings.fontFamily;
+
+  // Dynamic styles based on template settings
+  const dynamicStyles = {
+    accentText: { color: accentColor },
+    accentBg: { backgroundColor: accentColor },
+    accentBorder: { borderColor: accentColor },
+    fontStyle: { fontFamily },
+  };
+
   return (
     <div
       ref={ref}
       className="bg-white rounded-lg border shadow-sm overflow-hidden max-w-4xl mx-auto"
+      style={dynamicStyles.fontStyle}
     >
       <div className="p-8 space-y-8">
         {/* Header with Logo and Title */}
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-4">
-            {invoice.seller?.logo && (
+            {settings.showLogo && invoice.seller?.logo && (
               <div className="w-16 h-16 flex-shrink-0">
                 <img
                   src={invoice.seller.logo}
@@ -41,16 +73,21 @@ const InvoiceView = forwardRef(({ invoice }, ref) => {
               </div>
             )}
             <div>
-              <h1 className="text-2xl font-bold text-blue-600">INVOICE</h1>
+              <h1
+                className="text-2xl font-bold"
+                style={dynamicStyles.accentText}
+              >
+                INVOICE
+              </h1>
               <p className="text-sm text-gray-500 mt-1">#{invoice.number}</p>
             </div>
           </div>
           <div className="text-right">
             <h2 className="font-bold text-xl">
-              {invoice.seller?.name || "UAE Chemicals Ltd."}
+              {invoice.seller?.name || "Company Name"}
             </h2>
             <address className="not-italic text-sm text-gray-500">
-              {invoice.seller?.address || "Dubai, UAE"}
+              {invoice.seller?.address || "Address"}
               <br />
               {invoice.seller?.email && `Email: ${invoice.seller.email}`}
               <br />
@@ -64,7 +101,10 @@ const InvoiceView = forwardRef(({ invoice }, ref) => {
         {/* Invoice Info and Client Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="font-medium text-sm uppercase text-gray-500 mb-3">
+            <h3
+              className="font-medium text-sm uppercase mb-3"
+              style={dynamicStyles.accentText}
+            >
               Bill To:
             </h3>
             <h4 className="font-bold">{invoice.client?.name}</h4>
@@ -82,19 +122,28 @@ const InvoiceView = forwardRef(({ invoice }, ref) => {
           <div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <h3 className="font-medium text-sm uppercase text-gray-500 mb-1">
+                <h3
+                  className="font-medium text-sm uppercase mb-1"
+                  style={dynamicStyles.accentText}
+                >
                   Invoice Date:
                 </h3>
                 <p>{formatDate(invoice.invoiceDate)}</p>
               </div>
               <div>
-                <h3 className="font-medium text-sm uppercase text-gray-500 mb-1">
+                <h3
+                  className="font-medium text-sm uppercase mb-1"
+                  style={dynamicStyles.accentText}
+                >
                   Due Date:
                 </h3>
                 <p>{formatDate(invoice.dueDate)}</p>
               </div>
               <div>
-                <h3 className="font-medium text-sm uppercase text-gray-500 mb-1">
+                <h3
+                  className="font-medium text-sm uppercase mb-1"
+                  style={dynamicStyles.accentText}
+                >
                   Status:
                 </h3>
                 <p
@@ -117,26 +166,44 @@ const InvoiceView = forwardRef(({ invoice }, ref) => {
 
         {/* Invoice Items */}
         <div>
-          <h3 className="font-medium text-sm uppercase text-gray-500 mb-3">
+          <h3
+            className="font-medium text-sm uppercase mb-3"
+            style={dynamicStyles.accentText}
+          >
             Invoice Items
           </h3>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+              <thead style={{ backgroundColor: `${accentColor}15` }}>
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th
+                    className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                    style={dynamicStyles.accentText}
+                  >
                     #
                   </th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th
+                    className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                    style={dynamicStyles.accentText}
+                  >
                     Description
                   </th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th
+                    className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider"
+                    style={dynamicStyles.accentText}
+                  >
                     Quantity
                   </th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th
+                    className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider"
+                    style={dynamicStyles.accentText}
+                  >
                     Unit Price
                   </th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th
+                    className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider"
+                    style={dynamicStyles.accentText}
+                  >
                     Total
                   </th>
                 </tr>
@@ -188,10 +255,14 @@ const InvoiceView = forwardRef(({ invoice }, ref) => {
         </div>
 
         {/* Bank Details Section */}
-        {invoice.seller?.bankDetails &&
+        {settings.showPaymentDetails &&
+          invoice.seller?.bankDetails &&
           Object.values(invoice.seller.bankDetails).some((value) => value) && (
             <div className="border-t pt-4">
-              <h3 className="font-medium text-sm uppercase text-gray-500 mb-2">
+              <h3
+                className="font-medium text-sm uppercase mb-2"
+                style={dynamicStyles.accentText}
+              >
                 Payment Details
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
@@ -232,33 +303,48 @@ const InvoiceView = forwardRef(({ invoice }, ref) => {
         {/* Notes */}
         {invoice.notes && (
           <div className="border-t pt-4">
-            <h3 className="font-medium text-sm uppercase text-gray-500 mb-2">
+            <h3
+              className="font-medium text-sm uppercase mb-2"
+              style={dynamicStyles.accentText}
+            >
               Notes
             </h3>
             <p className="text-sm">{invoice.notes}</p>
           </div>
         )}
 
-        {/* Footer with Terms */}
-        <div className="border-t pt-6 text-center text-sm text-gray-500">
-          <p>Thank you for your business!</p>
-          {invoice.seller?.signature && (
-            <div className="mt-4 flex justify-center">
-              <div className="max-w-[200px] h-16">
-                <img
-                  src={invoice.seller.signature}
-                  alt="Digital Signature"
-                  className="max-w-full max-h-full object-contain"
-                />
+        {/* Signature Area */}
+        {settings.showSignature && (
+          <div className="border-t pt-6">
+            <div className="flex justify-end mt-8">
+              <div className="w-64 text-center">
+                {invoice.seller?.signature ? (
+                  <img
+                    src={invoice.seller.signature}
+                    alt="Signature"
+                    className="h-16 mx-auto"
+                  />
+                ) : (
+                  <div
+                    className="border-t-2 pt-2"
+                    style={dynamicStyles.accentBorder}
+                  ></div>
+                )}
+                <p className="text-sm mt-2">
+                  {invoice.seller?.name || "Authorized Signature"}
+                </p>
               </div>
             </div>
-          )}
-          <p className="mt-1">This invoice was created using InvoicePro.</p>
+          </div>
+        )}
+
+        {/* Footer with Terms */}
+        <div className="border-t pt-6 text-center text-sm text-gray-500">
+          <p>{settings.footerText}</p>
         </div>
       </div>
     </div>
   );
 });
 
-InvoiceView.displayName = "InvoiceView";
 export default InvoiceView;
