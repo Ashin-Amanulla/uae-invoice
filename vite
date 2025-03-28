@@ -1,0 +1,192 @@
+
+
+  VITE v6.2.3  ready in 213 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+1:56:31 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+1:56:31 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+1:56:33 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:42793:24)
+1:56:42 AM [vite] (client) hmr update /src/context/AuthContext.jsx
+1:56:42 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+1:56:42 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:42793:24)
+1:56:44 AM [vite] (client) hmr update /src/context/AuthContext.jsx
+1:56:44 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+1:56:44 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:42793:24)
+1:56:44 AM [vite] (client) hmr update /src/context/AuthContext.jsx
+1:56:45 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+1:56:45 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:42793:24)
+1:57:07 AM [vite] (client) hmr update /src/App.jsx
+1:57:07 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+1:57:07 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:42793:24)
+1:57:08 AM [vite] (client) hmr update /src/App.jsx
+1:57:08 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+1:57:08 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:42793:24)
+1:57:09 AM [vite] (client) hmr update /src/App.jsx
+1:57:09 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+1:57:09 AM [vite] Internal server error: Cannot apply unknown utility class: bg-background
+  Plugin: @tailwindcss/vite:generate:serve
+  File: /Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/src/index.css
+      at onInvalidCandidate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:346)
+      at Q (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:1:111175)
+      at me (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:6:310)
+      at Ht (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:780)
+      at async Xr (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1071)
+      at async Lo (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/tailwindcss/dist/lib.mjs:22:1748)
+      at async st (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/node/dist/index.mjs:10:3322)
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932
+      at async C.generate (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:3932)
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite
+      at async TransformPluginContext.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/@tailwindcss/vite/dist/index.mjs:1:1959)
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/nod
+      at async EnvironmentPluginContainer.transform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:47659:18)
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6b
+      at async loadAndTransform (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:41320:27)
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-
+      at async viteTransformMiddleware (file:///Users/ashinamanulla/Desktop/Project/invoice-shabeer/frontend/node_modules/vite/dist/node/chunks/dep-DDxXL6bt.js:42793:24)
